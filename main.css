@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(185, 149, 219);
+    transition: 0.5s;
+}
+
+body.active {
+    background-color: rgb(255, 87, 87);
+}
+.container {
+    width: 800px;
+    height: 500px;
+    position: relative;
+
+    padding: 40px 0;
+}
+
+.block {
+    height: 100%;
+
+    background-color: rgb(203, 182, 223);
+    box-shadow: 0 5px 45px rgb(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+.block.active {
+    background-color: rgb(245, 121, 121);
+}
+/* Начальный блок */
+
+.block_item {
+    width: 50%;
+
+    align-items: center;
+    text-align: center;
+}
+
+.start_text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    margin: 10px;
+}
+.start_btn {
+    border: none;
+    cursor: pointer;
+    padding: 8px 20px;
+    background-color: rgb(235, 234, 234);
+    color: rgb(40, 0, 77);
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+
+
+/* БЛОК ФОРМЫ */
+
+.form_box {
+    background-color: white;
+    height: 100%;
+    width: 50%;
+    box-shadow: 0 5px 45px rgb(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+
+    
+}
+
+.form_box.active{
+    left: 50%;
+}
+
+.form{
+    
+    padding: 50px;
+    position: absolute;
+    transition: 0.5s;
+    
+}
+
+.form_in{
+    left: 0;
+    transition-delay: 0.2s;
+}
+.form_up{
+    left: 100%;
+    transition-delay: 0s;
+}
+.form_box.active .form_in{
+    left: -100%;
+    transition-delay: 0s;
+
+}
+.form_box.active .form_up{
+    left: 0%;
+    transition-delay: 0.2s;
+}
+.form_title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #333;
+
+}
+
+.form_input{
+    width: 100%;
+    padding: 10px;
+    border: solid 1px #333;
+    font-size: inherit;
+
+}
+
+.form_btn {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: rgb(181, 140, 219);
+    color: #fff;
+    padding: 10px 50px;
+
+}
+
+.form_forgot{
+    color: #333;
+}
+
+.form_btn_up{
+    background-color: rgb(236, 46, 46);
+}
+
+
+@media(max-width: 992px){
+    .container{
+        max-width: 400px;
+        height: 650px;
+        padding: 0;
+        margin: 0 20px;
+
+    }
+    .block{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .block_item{
+        padding: 30px 0;
+    }
+    .form_box{
+        width: 100%;
+        height: 500px;
+        box-shadow: none;
+        top: 0;
+    }
+    .form_box.active{
+        top: 150px;
+        left: 0;
+    }
+
+
+}
+
